@@ -7,8 +7,7 @@ const Products = observer(() => {
 
 	useEffect(() => {
 		store.fetchAllProducts();
-		console.log(store.products);
-	}, []);
+	}, [store]);
 
 	return (
 		<div>
@@ -23,6 +22,7 @@ const Products = observer(() => {
 							<img
 								src={store.products[i].images[i].src}
 								className="product-img"
+								alt="product-img"
 							/>
 						</div>
 					);

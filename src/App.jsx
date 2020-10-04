@@ -8,7 +8,7 @@ const App = observer((props) => {
 
 	React.useEffect(() => {
 		store.createCheckout();
-	}, []);
+	}, [store]);
 
 	return (
 		<div className="App">

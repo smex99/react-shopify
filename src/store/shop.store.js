@@ -32,6 +32,8 @@ class ShopStore {
 			this.checkout.id,
 			lineItemsToAdd
 		);
+
+		this.checkout = checkout;
 	}
 
 	async removeItemFromCart() {}
