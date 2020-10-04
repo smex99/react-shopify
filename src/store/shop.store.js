@@ -4,8 +4,8 @@ import Client from "shopify-buy";
 
 // Read about shopify storefront API
 const client = Client.buildClient({
-	domain: "react-shop-test.myshopify.com",
-	storefrontAccessToken: "d9fddac3baf444d6b35cb93e53a88712",
+	domain: "",
+	storefrontAccessToken: "",
 });
 
 class ShopStore {
