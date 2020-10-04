@@ -1,10 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import "./index.css";
+
+// Page components
 import App from "./App";
 import Home from "./views/Home";
 import Products from "./views/Products";
+
+import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
@@ -15,7 +18,6 @@ ReactDOM.render(
 					<Route path="/" exact>
 						<Home />
 					</Route>
-
 					<Route path="/products">
 						<Products />
 					</Route>
