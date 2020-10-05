@@ -2,10 +2,7 @@ import React from "react";
 import { observer } from "mobx-react-lite";
 import shopStore from "./store/shop.store";
 import "./App.css";
-import "primereact/resources/themes/saga-blue/theme.css";
-import "primereact/resources/primereact.min.css";
-import "primeicons/primeicons.css";
-import "primeflex/primeflex.css";
+import { Container } from "atomize";
 
 const App = observer((props) => {
 	const store = React.useContext(shopStore);
@@ -14,12 +11,7 @@ const App = observer((props) => {
 		store.createCheckout();
 	}, [store]);
 
-	return (
-		<div className="App">
-			<h2>Boutique en cours de construction ...</h2>
-			{props.children}
-		</div>
-	);
+	return <Container>{props.children}</Container>;
 });
 
 export default App;

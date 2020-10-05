@@ -2,29 +2,31 @@
 	"name": "shopify-store",
 	"version": "0.1.0",
 	"private": true,
-	"dependencies": {
-		"@testing-library/jest-dom": "^4.2.4",
-		"@testing-library/react": "^9.5.0",
-		"@testing-library/user-event": "^7.2.1",
-		"classnames": "^2.2.6",
-		"mobx": "~5.15.6",
-		"mobx-react-lite": "~2.0.7",
-		"primeflex": "^2.0.0",
-		"primeicons": "^1.0.0",
-		"primereact": "^5.0.0",
-		"react": "^16.13.1",
-		"react-dom": "^16.13.1",
-		"react-router-dom": "^5.2.0",
-		"react-scripts": "3.4.3",
-		"react-transition-group": "^2.5.1",
-		"shopify-buy": "^2.11.0"
-	},
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
 		"netlify:deploy": "netlify deploy --dir=./build -p -m \"$(git log -1 --pretty=%B)\""
+	},
+	"dependencies": {
+		"@testing-library/jest-dom": "^4.2.4",
+		"@testing-library/react": "^9.5.0",
+		"@testing-library/user-event": "^7.2.1",
+		"atomize": "^1.0.26",
+		"mobx": "~5.15.6",
+		"mobx-react-lite": "~2.0.7",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1",
+		"react-router-dom": "^5.2.0",
+		"react-scripts": "3.4.3",
+		"react-transition-group": "^2.5.1",
+		"shopify-buy": "^2.11.0",
+		"styletron-engine-atomic": "^1.4.6",
+		"styletron-react": "^5.2.7"
+	},
+	"devDependencies": {
+		"netlify-cli": "^2.65.0"
 	},
 	"eslintConfig": {
 		"extends": "react-app"
@@ -40,8 +42,5 @@
 			"last 1 firefox version",
 			"last 1 safari version"
 		]
-	},
-	"devDependencies": {
-		"netlify-cli": "^2.65.0"
 	}
 }

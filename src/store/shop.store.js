@@ -40,7 +40,6 @@ class ShopStore {
 
 	async fetchAllProducts() {
 		const products = await client.product.fetchAll();
-		console.log(products);
 		this.products = products;
 	}
 
