@@ -16,6 +16,7 @@ import Navbar from "./components/Navbar/Navbar";
 
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
+import "mobx-react-lite/batchingForReactDom";
 
 const debug =
 	process.env.NODE_ENV === "production" ? void 0 : new DebugEngine();

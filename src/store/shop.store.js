@@ -11,6 +11,7 @@ const client = Client.buildClient({
 class ShopStore {
 	products = [];
 	product = {};
+
 	checkout = {};
 	isCartOpen = false;
 
@@ -45,7 +46,11 @@ class ShopStore {
 
 	async fetchProductWithId(id) {
 		const product = await client.product.fetch(id);
-		this.product = product;
+		this.product = { ...product };
+	}
+
+	clearSeletedProduct() {
+		this.product = {};
 	}
 
 	openCart() {
