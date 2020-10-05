@@ -1,11 +1,14 @@
 import React from "react";
+import { Container, Text } from "atomize";
 
 const Home = () => {
 	return (
-		<div>
-			<h3>Home Page</h3>
+		<Container>
+			<Text tag="h2" textSize="Title">
+				Home Page
+			</Text>
 			<p>This is intended to be a welcome page for our e-commerce website</p>
-		</div>
+		</Container>
 	);
 };
 

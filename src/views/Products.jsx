@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { observer } from "mobx-react-lite";
 import shopStore from "../store/shop.store";
-import { Div, Text, Image, Row, Col } from "atomize";
+import { Div, Text, Image, Row, Col, Container } from "atomize";
+import { Link } from "react-router-dom";
 
 const Products = observer(() => {
 	const store = React.useContext(shopStore);
@@ -10,12 +11,10 @@ const Products = observer(() => {
 		store.fetchAllProducts();
 	}, [store]);
 
-	// const handleClick = () => {};
-
 	return (
-		<>
+		<Container>
 			<Text tag="h2" textSize="heading">
-				Page de produits
+				Product Collection
 			</Text>
 
 			<Div d="flex">
@@ -25,11 +24,14 @@ const Products = observer(() => {
 					) : (
 						store.products.map((item, i) => {
 							return (
-								<Col size="3" key={item.id}>
-									<Div w="270px" p="1rem" shadow="5" rounded="lg">
-										<Text textSize="title">{item.title}</Text>
-										<Image alt="product-img" src={item.images[i].src} />
+								<Col key={item.id}>
+									<Div w="270px" p="1rem" shadow="5" rounded="lg" m="8px">
+										<Image alt="product-img" src={item.images[0].src} />
+										<Link to={`/product/${item.id}`}>
+											<Text textSize="subheader">{item.title}</Text>
+										</Link>
 										<Text textSize="paragraph">{item.handle}</Text>
+										<Text>{item.variants[0].price} MAD</Text>
 									</Div>
 								</Col>
 							);
@@ -37,7 +39,7 @@ const Products = observer(() => {
 					)}
 				</Row>
 			</Div>
-		</>
+		</Container>
 	);
 });
 

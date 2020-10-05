@@ -2,8 +2,6 @@ import React from "react";
 import { observer } from "mobx-react-lite";
 import shopStore from "./store/shop.store";
 
-import "./App.css";
-
 const App = observer((props) => {
 	const store = React.useContext(shopStore);
 

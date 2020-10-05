@@ -13,7 +13,7 @@ import About from "./views/About";
 import Contact from "./views/Contact";
 
 import Navbar from "./components/Navbar/Navbar";
-import { Container } from "atomize";
+
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 
@@ -29,25 +29,23 @@ ReactDOM.render(
 			<App>
 				<Router>
 					<Navbar />
-					<Container>
-						<Switch>
-							<Route path="/" exact>
-								<Home />
-							</Route>
-							<Route path="/products">
-								<Products />
-							</Route>
-							<Route path="/product/:id">
-								<Product />
-							</Route>
-							<Route path="/about">
-								<About />
-							</Route>
-							<Route path="/contact">
-								<Contact />
-							</Route>
-						</Switch>
-					</Container>
+					<Switch>
+						<Route path="/" exact>
+							<Home />
+						</Route>
+						<Route path="/products" exact>
+							<Products />
+						</Route>
+						<Route path="/product/:id" exact>
+							<Product />
+						</Route>
+						<Route path="/about" exact>
+							<About />
+						</Route>
+						<Route path="/contact" exact>
+							<Contact />
+						</Route>
+					</Switch>
 				</Router>
 			</App>
 		</StyletronProvider>

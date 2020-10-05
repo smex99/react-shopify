@@ -1,11 +1,20 @@
 import React from "react";
-import { Text, Div } from "atomize";
+import { Text, Div, Container } from "atomize";
 
 const About = () => {
 	return (
-		<Div>
-			<Text textSize="paragraph">About page en cours de construction</Text>
-		</Div>
+		<Container>
+			<Div>
+				<Text tag="h2" textSize="title">
+					Why Shopify Store ?
+				</Text>
+				<Text textSize="paragraph">
+					Shopify Store is a new way of shopping, one that gives you the same
+					advantages that brands have had for years, connecting you to high
+					quality manufacturers and letting you shop at factory prices.{" "}
+				</Text>
+			</Div>
+		</Container>
 	);
 };
 

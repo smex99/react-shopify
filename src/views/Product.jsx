@@ -1,20 +1,22 @@
 import React, { useEffect, useContext } from "react";
 import { observer } from "mobx-react-lite";
 import shopStore from "../store/shop.store";
-import { Text } from "atomize";
+import { Container, Text } from "atomize";
+import { useParams } from "react-router-dom";
 
 const Product = observer(() => {
 	const store = useContext(shopStore);
+	let id = useParams();
 
 	useEffect(() => {
-		// Get current product id
-		store.fetchProductWithId();
-	}, [store]);
+		store.fetchProductWithId(id);
+	}, [store, id]);
 
 	return (
-		<div>
-			<Text textSize="display1"></Text>
-		</div>
+		<Container>
+			{!store.product && <Text>Loading...</Text>}
+			{/* <Text textSize="title">{store.product.title}</Text> */}
+		</Container>
 	);
 });
 

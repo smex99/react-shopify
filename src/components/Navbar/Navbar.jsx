@@ -5,10 +5,13 @@ import "./Navbar.css";
 const Navbar = () => {
 	return (
 		<div className="topnav">
-			<NavLink to="/">Acceuil</NavLink>
-			<NavLink to="/products">Produits</NavLink>
-			<NavLink to="/about">A Propos</NavLink>
+			<NavLink to="/">Home</NavLink>
+			<NavLink to="/products">Products</NavLink>
+			<NavLink to="/about">About</NavLink>
 			<NavLink to="/contact">Contact</NavLink>
+			<NavLink to="/login" style={{ float: "right" }}>
+				Login
+			</NavLink>
 		</div>
 	);
 };
