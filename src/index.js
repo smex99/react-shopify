@@ -10,7 +10,10 @@ import Home from "./views/Home";
 import Products from "./views/Products";
 import Product from "./views/Product";
 import About from "./views/About";
+import Contact from "./views/Contact";
 
+import Navbar from "./components/Navbar/Navbar";
+import { Container } from "atomize";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 
@@ -25,20 +28,26 @@ ReactDOM.render(
 		<StyletronProvider value={engine} debug={debug} debugAfterHydration>
 			<App>
 				<Router>
-					<Switch>
-						<Route path="/" exact>
-							<Home />
-						</Route>
-						<Route path="/products">
-							<Products />
-						</Route>
-						<Route path="/product/:id">
-							<Product />
-						</Route>
-						<Route path="/about">
-							<About />
-						</Route>
-					</Switch>
+					<Navbar />
+					<Container>
+						<Switch>
+							<Route path="/" exact>
+								<Home />
+							</Route>
+							<Route path="/products">
+								<Products />
+							</Route>
+							<Route path="/product/:id">
+								<Product />
+							</Route>
+							<Route path="/about">
+								<About />
+							</Route>
+							<Route path="/contact">
+								<Contact />
+							</Route>
+						</Switch>
+					</Container>
 				</Router>
 			</App>
 		</StyletronProvider>
