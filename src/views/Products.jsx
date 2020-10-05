@@ -3,7 +3,6 @@ import { observer } from "mobx-react-lite";
 import shopStore from "../store/shop.store";
 
 import { Card } from "primereact/card";
-import { Button } from "primereact/button";
 
 const Products = observer(() => {
 	const store = React.useContext(shopStore);
