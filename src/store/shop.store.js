@@ -18,6 +18,12 @@ class ShopStore {
 	// store actions
 	async createCheckout() {
 		const checkout = await client.checkout.create();
+		localStorage.setItem("checkout", checkout.id);
+		this.checkout = checkout;
+	}
+
+	async fetchCheckout(checkoutId) {
+		const checkout = await client.checkout.fetch(checkoutId);
 		this.checkout = checkout;
 	}
 
@@ -83,6 +89,7 @@ decorate(ShopStore, {
 	isCartOpen: observable,
 	selectedImage: observable,
 	createCheckout: action,
+	fetchCheckout: action,
 	addItemToCart: action,
 	removeItemFromCart: action,
 	fetchAllProducts: action,
