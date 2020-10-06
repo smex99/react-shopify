@@ -26,7 +26,7 @@ const Product = observer(() => {
 
 	return (
 		<Container>
-			{!store.product && <Text>Loading...</Text>}
+			{!store.product && <Icon name="Loading3" size="20px" />}
 
 			{store.product.images && (
 				<Row>
@@ -43,6 +43,7 @@ const Product = observer(() => {
 								{store.product.images.map((item) => {
 									return (
 										<Image
+											cursor="pointer"
 											onClick={(e) => handleClickProductImg(item.src)}
 											key={item.src}
 											w="80px"

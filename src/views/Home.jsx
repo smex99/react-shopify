@@ -7,7 +7,9 @@ const Home = () => {
 			<Text tag="h2" textSize="Title">
 				Home Page
 			</Text>
-			<p>This is intended to be a welcome page for our e-commerce website</p>
+			<Text textSize="paragraph">
+				Cette Boutique est en cours de construction. Boutique Monoproduit.
+			</Text>
 		</Container>
 	);
 };

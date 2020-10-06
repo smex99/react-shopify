@@ -27,7 +27,7 @@ const Contact = () => {
 				<Text textSize="paragraph">Stay in touch with us.</Text>
 			</Div>
 
-			<Div w="500px" h="500px">
+			<Div>
 				<form onSubmit={(e) => handleSubmit(e)}>
 					<Input
 						name="fullName"
