@@ -15,6 +15,15 @@ const Product = observer(() => {
 		};
 	}, [store, id]);
 
+	const handleClickProductImg = (imgUrl) => {
+		store.setProductSelectedImage(imgUrl);
+	};
+
+	const handleAddItemToCart = (variantId, quantity) => {
+		store.addItemToCart(variantId, quantity);
+		store.openCart();
+	};
+
 	return (
 		<Container>
 			{!store.product && <Text>Loading...</Text>}
@@ -22,13 +31,19 @@ const Product = observer(() => {
 			{store.product.images && (
 				<Row>
 					<Col>
-						<Image alt="product-img" src={store.product.images[0].src} />
-
+						{/* <Image alt="product-img" src={store.product.images[0].src} /> */}
+						<Image
+							h="600px"
+							w="600px"
+							alt="product-img"
+							src={store.selectedImage}
+						/>
 						<Div>
 							<Row>
 								{store.product.images.map((item) => {
 									return (
 										<Image
+											onClick={(e) => handleClickProductImg(item.src)}
 											key={item.src}
 											w="80px"
 											h="80px"
@@ -63,8 +78,11 @@ const Product = observer(() => {
 							p={{ r: "1.5rem", l: "1rem" }}
 							shadow="3"
 							hoverShadow="4"
+							onClick={() =>
+								handleAddItemToCart(store.product.variants[0].id, 1)
+							}
 						>
-							Add to Cart
+							Ajouter au panier
 						</Button>
 					</Col>
 				</Row>

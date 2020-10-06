@@ -1,5 +1,5 @@
 import React from "react";
-import { Div } from "atomize";
+import { Div, Text } from "atomize";
 
 const Footer = () => {
 	return (

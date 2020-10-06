@@ -11,7 +11,7 @@ const client = Client.buildClient({
 class ShopStore {
 	products = [];
 	product = {};
-
+	selectedImage = "";
 	checkout = {};
 	isCartOpen = false;
 
@@ -37,7 +37,16 @@ class ShopStore {
 		this.checkout = checkout;
 	}
 
-	async removeItemFromCart() {}
+	async removeItemFromCart(id) {
+		const lineItemsToRemove = [id];
+
+		const checkout = await client.checkout.removeLineItems(
+			this.checkout.id,
+			lineItemsToRemove
+		);
+
+		this.checkout = checkout;
+	}
 
 	async fetchAllProducts() {
 		const products = await client.product.fetchAll();
@@ -46,11 +55,16 @@ class ShopStore {
 
 	async fetchProductWithId(id) {
 		const product = await client.product.fetch(id);
-		this.product = { ...product };
+		this.product = product;
+		this.selectedImage = product.images[0].src;
 	}
 
 	clearSeletedProduct() {
 		this.product = {};
+	}
+
+	setProductSelectedImage(imgUrl) {
+		this.selectedImage = imgUrl;
 	}
 
 	openCart() {
@@ -67,11 +81,14 @@ decorate(ShopStore, {
 	product: observable,
 	checkout: observable,
 	isCartOpen: observable,
+	selectedImage: observable,
 	createCheckout: action,
 	addItemToCart: action,
 	removeItemFromCart: action,
 	fetchAllProducts: action,
 	fetchProductWithId: action,
+	clearSeletedProduct: action,
+	setProductSelectedImage: action,
 	openCart: action,
 	closeCart: action,
 });

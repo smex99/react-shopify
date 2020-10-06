@@ -13,6 +13,8 @@ import About from "./views/About";
 import Contact from "./views/Contact";
 
 import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
+import Cart from "./components/Cart/Cart";
 
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
@@ -25,32 +27,33 @@ const debug =
 const engine = new Styletron();
 
 ReactDOM.render(
-	<React.StrictMode>
-		<StyletronProvider value={engine} debug={debug} debugAfterHydration>
-			<App>
-				<Router>
-					<Navbar />
-					<Switch>
-						<Route path="/" exact>
-							<Home />
-						</Route>
-						<Route path="/products" exact>
-							<Products />
-						</Route>
-						<Route path="/product/:id" exact>
-							<Product />
-						</Route>
-						<Route path="/about" exact>
-							<About />
-						</Route>
-						<Route path="/contact" exact>
-							<Contact />
-						</Route>
-					</Switch>
-				</Router>
-			</App>
-		</StyletronProvider>
-	</React.StrictMode>,
+	<StyletronProvider value={engine} debug={debug} debugAfterHydration>
+		<App>
+			<Router>
+				<Navbar />
+				<Cart />
+				<Switch>
+					<Route path="/" exact>
+						<Home />
+					</Route>
+					<Route path="/products" exact>
+						<Products />
+					</Route>
+					<Route path="/product/:id" exact>
+						<Product />
+					</Route>
+					<Route path="/about" exact>
+						<About />
+					</Route>
+					<Route path="/contact" exact>
+						<Contact />
+					</Route>
+				</Switch>
+				<Footer />
+			</Router>
+		</App>
+	</StyletronProvider>,
+
 	document.getElementById("root")
 );
 

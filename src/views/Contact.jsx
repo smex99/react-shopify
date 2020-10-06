@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text, Div, Container, Input, Textarea, Icon, Button } from "atomize";
+import { Text, Div, Container, Input, Textarea, Button } from "atomize";
 
 const Contact = () => {
 	const [contact, setContact] = useState({
@@ -51,14 +51,6 @@ const Contact = () => {
 						onChange={(e) => handleOnChange(e)}
 					/>
 					<Button
-						prefix={
-							<Icon
-								name="EyeSolid"
-								size="16px"
-								color="white"
-								m={{ r: "0.5rem" }}
-							/>
-						}
 						bg="warning700"
 						hoverBg="warning800"
 						rounded="circle"
@@ -66,7 +58,7 @@ const Contact = () => {
 						shadow="3"
 						hoverShadow="4"
 					>
-						Preview
+						Envoyer votre message
 					</Button>
 				</form>
 			</Div>

@@ -6,6 +6,7 @@ const App = observer((props) => {
 	const store = React.useContext(shopStore);
 
 	React.useEffect(() => {
+		// TODO: Should save the checkout info into localStorage
 		store.createCheckout();
 	}, [store]);
 

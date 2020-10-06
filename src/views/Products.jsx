@@ -25,7 +25,14 @@ const Products = observer(() => {
 						store.products.map((item, i) => {
 							return (
 								<Col key={item.id} size="3">
-									<Div w="270px" p="1rem" shadow="5" rounded="lg" m="8px">
+									<Div
+										w="270px"
+										h="420px"
+										p="1rem"
+										shadow="5"
+										rounded="lg"
+										m="1rem"
+									>
 										<Image alt="product-img" src={item.images[0].src} />
 										<Link to={`/product/${item.id}`}>
 											<Text textSize="subheader">{item.title}</Text>
