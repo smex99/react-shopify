@@ -29,7 +29,7 @@ const Products = observer(() => {
 										w="300px"
 										h="450px"
 										p="1rem"
-										shadow="5"
+										shadow="3"
 										rounded="lg"
 										m="1rem"
 									>

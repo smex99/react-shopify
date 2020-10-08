@@ -13,19 +13,18 @@
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
-	font-size: 17px;
+	font-size: 15px;
+	font-weight: 600;
 }
 
 /* Change the color of links on hover */
 .topnav a:hover {
-	background-color: #f0c22d;
-	color: white;
+	color: rgb(2, 109, 214);
 }
 
 /* Add an active class to highlight the current page */
 .topnav a.active {
-	background-color: #f0c22d;
-	color: white;
+	color: rgb(2, 109, 214);
 }
 
 /* Hide the link that should open and close the topnav on small screens */

@@ -31,10 +31,9 @@ const Product = observer(() => {
 			{store.product.images && (
 				<Row>
 					<Col>
-						{/* <Image alt="product-img" src={store.product.images[0].src} /> */}
 						<Image
-							h="600px"
-							w="600px"
+							maxH="600px"
+							maxW="600px"
 							alt="product-img"
 							src={store.selectedImage}
 						/>
@@ -59,9 +58,12 @@ const Product = observer(() => {
 					</Col>
 					<Col>
 						<Div m="16px">
-							<Text textSize="title">{store.product.title}</Text>
-							<Text textSize="subheader">Description</Text>
-							<Text textSize="paragraph">{store.product.description}</Text>
+							<Text textSize="heading" textWeight="800">
+								{store.product.title}
+							</Text>
+							<Text textSize="paragraph" textAlign="justify" textWeight="500">
+								{store.product.description}
+							</Text>
 						</Div>
 
 						<Button

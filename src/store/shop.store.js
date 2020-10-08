@@ -2,7 +2,6 @@ import { createContext } from "react";
 import { action, decorate, observable } from "mobx";
 import Client from "shopify-buy";
 
-// Read about shopify storefront API
 const client = Client.buildClient({
 	domain: "react-shop-test.myshopify.com",
 	storefrontAccessToken: "d9fddac3baf444d6b35cb93e53a88712",
@@ -15,7 +14,6 @@ class ShopStore {
 	checkout = {};
 	isCartOpen = false;
 
-	// store actions
 	async createCheckout() {
 		const checkout = await client.checkout.create();
 		localStorage.setItem("checkout", checkout.id);
@@ -62,6 +60,7 @@ class ShopStore {
 	async fetchProductWithId(id) {
 		const product = await client.product.fetch(id);
 		this.product = product;
+		console.log(product);
 		this.selectedImage = product.images[0].src;
 	}
 

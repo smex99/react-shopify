@@ -12,6 +12,7 @@ import Product from "./views/Product";
 import About from "./views/About";
 import Contact from "./views/Contact";
 
+// Global components
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Cart from "./components/Cart/Cart";
