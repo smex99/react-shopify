@@ -16,11 +16,11 @@ const Navbar = observer(() => {
 
 	return (
 		<div className={showMenu ? "topnav" : "topnav responsive"}>
-			<NavLink to="/">Acceuil</NavLink>
-			<NavLink to="/products">Produits</NavLink>
-			<NavLink to="/about">A Propos</NavLink>
+			<NavLink to="/">Home</NavLink>
+			<NavLink to="/products">Shop</NavLink>
+			<NavLink to="/about">About</NavLink>
 			<NavLink to="/contact">Contact</NavLink>
-			<Anchor onClick={() => store.openCart()}>Panier</Anchor>
+			<Anchor onClick={() => store.openCart()}>Cart</Anchor>
 			<Anchor className="icon" onClick={() => handleResponsiveMenu()}>
 				<Icon name="Menu" size="17px" />
 			</Anchor>

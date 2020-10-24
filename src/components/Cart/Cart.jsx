@@ -15,7 +15,7 @@ const Cart = observer(() => {
 			<Div d="flex" flexDir="column" m={{ b: "4rem" }}>
 				<Row m={{ b: "1rem" }}>
 					<Col>
-						<Text textSize="subheader">Votre panier</Text>
+						<Text textSize="subheader">Cart</Text>
 					</Col>
 					<Col size="1">
 						<Icon

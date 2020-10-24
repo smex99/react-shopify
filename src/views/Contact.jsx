@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Text, Div, Container, Input, Textarea, Button } from "atomize";
+import { Text, Div, Container, Button } from "atomize";
 
 const Contact = () => {
 	const [contact, setContact] = useState({
 		fullName: "",
 		email: "",
+		subject: "",
 		message: "",
 	});
 
@@ -22,31 +23,40 @@ const Contact = () => {
 		<>
 			<Div bg="info300" h="20rem" textAlign="center">
 				<Text tag="h3" textSize="display1" textWeight="900">
-					Contact Page
+					Contact Us
 				</Text>
-				<Text>Home Contact Us</Text>
+				<Text>Home-Contact Us</Text>
 			</Div>
 			<Container>
 				<Div>
-					<form onSubmit={(e) => handleSubmit(e)}>
-						<Input
+					<form className="contact-form" onSubmit={(e) => handleSubmit(e)}>
+						<input
 							name="fullName"
-							placeholder="Full Name"
-							m="8px"
+							type="text"
+							placeholder="Enter your name"
 							value={contact.fullName}
 							onChange={(e) => handleOnChange(e)}
 						/>
-						<Input
+						<input
 							name="email"
-							placeholder="Email Adress"
-							m="8px"
+							type="email"
+							placeholder="Enter email address"
+							className="form.input"
 							value={contact.email}
 							onChange={(e) => handleOnChange(e)}
 						/>
-						<Textarea
+						<input
+							name="subject"
+							type="text"
+							placeholder="Enter Subject"
+							className="form.input"
+							value={contact.subject}
+							onChange={(e) => handleOnChange(e)}
+						/>
+						<textarea
 							name="message"
-							placeholder="Message"
-							m="8px"
+							placeholder="Enter Message"
+							className="form.input"
 							value={contact.message}
 							onChange={(e) => handleOnChange(e)}
 						/>
@@ -54,7 +64,7 @@ const Contact = () => {
 							bg="warning700"
 							hoverBg="warning800"
 							rounded="circle"
-							p={{ r: "1.5rem", l: "1rem" }}
+							p={{ r: "1.5rem", l: "1.5rem" }}
 							shadow="3"
 							hoverShadow="4"
 						>

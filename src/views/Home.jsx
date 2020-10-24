@@ -22,7 +22,7 @@ const Home = () => {
 						<Button
 							bg="info800"
 							rounded="circle"
-							p={{ r: "1.5rem", l: "1rem" }}
+							p={{ r: "1.5rem", l: "1.5rem" }}
 							shadow="3"
 							hoverShadow="4"
 						>
